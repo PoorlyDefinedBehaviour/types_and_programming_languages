@@ -30,24 +30,28 @@ Indirect left recursion occurs when the definition of left recursion is satified
 **Eliminating left recursion**
 
 Given a left recursive grammar:  
-A -> Aα/β
+A -> Aα | β
 
 To eliminate left recursion, apply this transformation
 
-A -> Aα/β  
+A -> Aα | β  
 A -> βA'  
-A'-> αA'/ε
+A'-> αA' | ε
 
 Examples:
 
-E -> E+T/T  
+E -> E+T | T  
 E -> TE'  
-E'-> +TE'/ε
+E'-> +TE' | ε
 
-A -> ABα/Aa/a  
+A -> ABα | Aa | a  
 A -> aA'  
-A'-> BαA'/aA'/ε
+A'-> BαA' | aA' | ε
 
-A -> AC/Aad/bd/c  
-A -> bdA'/cA'  
-A'-> CA'/adA'/ε
+A -> AC | Aad | bd | c  
+A -> bdA' | cA'  
+A'-> CA' | adA' | ε
+
+Expression -> Expression + Term  
+Expression -> ε Expression'  
+Expression'-> + Term Expression' | ε
