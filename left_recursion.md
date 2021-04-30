@@ -4,7 +4,7 @@ A grammar is left-recursive if and only if there exists a nonterminal symbol A t
 
 A => Aα
 
-**Direct left recursion**
+**Direct left recursion**  
 Direct left recursion occurs when the definition of left recursion can be satistified with only one substitution.
 
 Example:
